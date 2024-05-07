@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nivel 2 - Juego de Geometría Analítica</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  h1 {
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  form {
+    text-align: center;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 10px;
+  }
+  
+  input[type="radio"] {
+    margin-right: 5px;
+  }
+  
+  input[type="submit"] {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-top: 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+  }
+  
+  input[type="submit"]:hover {
+    background-color: #45a049;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>Nivel 2</h1>
+  <form action="" method="post">
+    <label for="question1">Pregunta 1: ¿Cuál es la ecuación de la recta que pasa por los puntos (-1, 4) y (3, -2)?</label>
+    <input type="radio" name="question1" value="a"> y = -x + 3<br>
+    <input type="radio" name="question1" value="b"> y = 2x - 6<br>
+    <input type="radio" name="question1" value="c"> y = -2x + 6<br>
+    
+    <label for="question2">Pregunta 2: ¿Cuál es la ecuación de la circunferencia con centro en el punto (-2, 1) y radio 4?</label>
+    <input type="radio" name="question2" value="a"> (x + 2)^2 + (y - 1)^2 = 4<br>
+    <input type="radio" name="question2" value="b"> (x - 2)^2 + (y + 1)^2 = 16<br>
+    <input type="radio" name="question2" value="c"> (x + 2)^2 + (y - 1)^2 = 16<br>
+    
+    <input type="button" value="Siguiente" onclick="checkAnswers()">
+  </form>
+</div>
+<script>
+  function checkAnswers() {
+      var q1 = document.querySelector('input[name="question1"]:checked');
+      var q2 = document.querySelector('input[name="question2"]:checked');
+      
+      if (q1 && q2) {
+          if (q1.value === "b" && q2.value === "c") {
+              window.location.href = "nivel3.html";
+          } else {
+              window.location.href = "loser.html";
+          }
+      } else {
+          alert("Por favor, responde a todas las preguntas.");
+      }
+  }
+  </script>
+</body>
+</html>
